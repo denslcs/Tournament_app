@@ -10,13 +10,13 @@
 
 ## Технологии
 
-| Часть | Технологии |
-| --- | --- |
-| Frontend (ЛР №1) | React, TypeScript, Vite |
-| Backend (ЛР №2) | Python, FastAPI, Pydantic |
+| Часть             | Технологии                        |
+| ----------------- | --------------------------------- |
+| Frontend (ЛР №1)  | React, TypeScript, Vite           |
+| Backend (ЛР №2)   | Python, FastAPI, Pydantic         |
 | База данных и ORM | PostgreSQL, SQLAlchemy 2, psycopg |
-| API-документация | Swagger UI (OpenAPI) |
-| Контроль версий | Git, GitHub |
+| API-документация  | Swagger UI (OpenAPI)              |
+| Контроль версий   | Git, GitHub                       |
 
 ## Структура репозитория
 
@@ -106,28 +106,28 @@ npm run dev
 
 Все приведённые маршруты относятся к текущей версии бэкенда. Базовый адрес: `http://127.0.0.1:8000`. Формат запросов и ответов — JSON.
 
-| Метод | Маршрут | Назначение |
-| --- | --- | --- |
-| POST | `/tournaments` | Создать турнир |
-| GET | `/tournaments` | Получить список турниров |
-| GET | `/tournaments/{tournament_id}` | Получить турнир |
-| PUT | `/tournaments/{tournament_id}` | Заменить изменяемые параметры турнира |
-| DELETE | `/tournaments/{tournament_id}` | Удалить турнир |
-| POST | `/tournaments/{tournament_id}/teams` | Создать команду и занять слот |
-| GET | `/tournaments/{tournament_id}/teams` | Список команд |
-| GET | `/tournaments/{tournament_id}/teams/{team_id}` | Команда с игроками |
-| PUT | `/tournaments/{tournament_id}/teams/{team_id}` | Изменить название команды |
-| DELETE | `/tournaments/{tournament_id}/teams/{team_id}` | Отменить регистрацию команды |
-| POST | `/tournaments/{tournament_id}/teams/{team_id}/players` | Добавить игрока |
-| GET | `/tournaments/{tournament_id}/teams/{team_id}/players` | Игроки команды |
-| GET | `/tournaments/{tournament_id}/teams/{team_id}/players/{player_id}` | Получить игрока |
-| PUT | `/tournaments/{tournament_id}/teams/{team_id}/players/{player_id}` | Изменить игрока |
-| DELETE | `/tournaments/{tournament_id}/teams/{team_id}/players/{player_id}` | Удалить игрока |
-| POST | `/tournaments/{tournament_id}/matches` | Назначить матч |
-| GET | `/tournaments/{tournament_id}/matches` | Матчи турнира |
-| GET | `/tournaments/{tournament_id}/matches/{match_id}` | Получить матч |
-| PUT | `/tournaments/{tournament_id}/matches/{match_id}` | Изменить матч/записать результат |
-| DELETE | `/tournaments/{tournament_id}/matches/{match_id}` | Удалить матч |
+| Метод  | Маршрут                                                            | Назначение                            |
+| ------ | ------------------------------------------------------------------ | ------------------------------------- |
+| POST   | `/tournaments`                                                     | Создать турнир                        |
+| GET    | `/tournaments`                                                     | Получить список турниров              |
+| GET    | `/tournaments/{tournament_id}`                                     | Получить турнир                       |
+| PUT    | `/tournaments/{tournament_id}`                                     | Заменить изменяемые параметры турнира |
+| DELETE | `/tournaments/{tournament_id}`                                     | Удалить турнир                        |
+| POST   | `/tournaments/{tournament_id}/teams`                               | Создать команду и занять слот         |
+| GET    | `/tournaments/{tournament_id}/teams`                               | Список команд                         |
+| GET    | `/tournaments/{tournament_id}/teams/{team_id}`                     | Команда с игроками                    |
+| PUT    | `/tournaments/{tournament_id}/teams/{team_id}`                     | Изменить название команды             |
+| DELETE | `/tournaments/{tournament_id}/teams/{team_id}`                     | Отменить регистрацию команды          |
+| POST   | `/tournaments/{tournament_id}/teams/{team_id}/players`             | Добавить игрока                       |
+| GET    | `/tournaments/{tournament_id}/teams/{team_id}/players`             | Игроки команды                        |
+| GET    | `/tournaments/{tournament_id}/teams/{team_id}/players/{player_id}` | Получить игрока                       |
+| PUT    | `/tournaments/{tournament_id}/teams/{team_id}/players/{player_id}` | Изменить игрока                       |
+| DELETE | `/tournaments/{tournament_id}/teams/{team_id}/players/{player_id}` | Удалить игрока                        |
+| POST   | `/tournaments/{tournament_id}/matches`                             | Назначить матч                        |
+| GET    | `/tournaments/{tournament_id}/matches`                             | Матчи турнира                         |
+| GET    | `/tournaments/{tournament_id}/matches/{match_id}`                  | Получить матч                         |
+| PUT    | `/tournaments/{tournament_id}/matches/{match_id}`                  | Изменить матч/записать результат      |
+| DELETE | `/tournaments/{tournament_id}/matches/{match_id}`                  | Удалить матч                          |
 
 В текущем коде для обновлений используется `PUT` с обязательными полями схемы; `PATCH` и префикс `/api/v1` пока не реализованы. Планируются при дальнейшем развитии API.
 
@@ -152,7 +152,7 @@ npm run dev
 `POST /tournaments/1/teams`
 
 ```json
-{"name": "Night Wolves"}
+{ "name": "Night Wolves" }
 ```
 
 Команда сразу занимает одно место турнира, даже если в ней пока нет игроков.
@@ -216,16 +216,16 @@ SELECT * FROM public.tournaments ORDER BY id;
 1 Работа:
 Была сделана часть frontend. Добавлены файлы и папки:
 Public/
-    -icons
-    -images
+-icons
+-images
 src/
-    -data/
-        -tournaments.ts
-    -pages/
-        -HomePage.tsx
-        -MatchPage.tsx
-        -TournamentsPage.tsx
-    -App.tsx
+-data/
+-tournaments.ts
+-pages/
+-HomePage.tsx
+-MatchPage.tsx
+-TournamentsPage.tsx
+-App.tsx
 
 В файлах icons и images я добавил логотипы игр и задний фон сайта
 
